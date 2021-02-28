@@ -1,0 +1,689 @@
+/*Animaciones*/
+@keyframes mover-logo {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(6px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(6px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes salto {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-6px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    75% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/*============================================================== Fin Animaciones ==============================================================*/
+/***********************************************************************************************************************************************/
+/*============================================================== Inicio Globales ==============================================================*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    /*Tipografia*/
+    width: 100%;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1170px;
+    margin: auto;
+    padding: 0px 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=============================================================== Fin Globales ================================================================*/
+/***********************************************************************************************************************************************/
+/*============================================================== Inicio Encabezado ==============================================================*/
+/* Contenedor del header */
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #00001A;
+    position: fixed;
+}
+
+header .contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Fin Contenedor Header */
+
+/* Inicio logo */
+#logo {
+    padding: 8px 0;
+}
+
+#logo a {
+    font-size: 32px;
+    color: white;
+}
+
+/* Fin Logo */
+
+/* Inicio Menu */
+#menu {
+    width: 100%;
+    max-width: 520px;
+    padding: 4px 0;
+}
+
+#menu a {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    color: white;
+    transition: all 0.22s ease-in-out;
+    margin: 20px;
+}
+
+#menu a:hover {
+    color: #6c6889;
+}
+
+/* Menu Despegable */
+#hack {
+    display: none;
+}
+
+#hack~nav {
+    display: none;
+    width: 100%;
+    max-width: 250px;
+    background-color: #13142A;
+}
+
+#hack:checked~nav {
+    display: block;
+    position: fixed;
+    top: 60px;
+    right: 0px;
+}
+
+#checkbox-hack img {
+    width: 40px;
+    padding: 8px 0px;
+    transition: all 0.4s;
+}
+
+#hack:checked+#checkbox-hack img {
+    transform: rotate(180deg);
+}
+
+/* Fin Menu Despegable */
+
+/* Inicio Media Query */
+@media all and (min-width: 736px) {
+    header .contenedor {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #checkbox-hack {
+        display: none;
+    }
+
+    #hack~nav {
+        display: inline;
+        max-width: 450px;
+        background-color: transparent;
+    }
+
+    #menu {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 22px 0;
+    }
+
+    #menu a {
+        display: inline;
+        margin: 0px 10px;
+    }
+
+    #logo:hover {
+        animation-name: mover-logo;
+        animation-duration: 1s;
+    }
+}
+
+/*============================================================== Fin Encabezado ==============================================================*/
+/***********************************************************************************************************************************************/
+/*============================================================== Inicio Banner ==============================================================*/
+#banner {
+    width: 100%;
+    height: 800px;
+    background-image: url(../img/Banner.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+#banner>div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 34, 0.65);
+}
+
+.action {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.action h1 {
+    font-size: 12em;
+    /*180px*/
+}
+
+.action p {
+    font-size: 2.6em;
+    /*36px*/
+}
+
+.action a {
+    display: block;
+    font-size: 24px;
+    width: 190px;
+    background-color: #AAA6CA;
+    padding: 15px 32px;
+    margin-top: 35px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s linear;
+}
+
+.action a:hover {
+    background-color: rgba(12, 12, 34, 0.65);
+}
+
+@media all and (min-width: 728px) {
+    .action a:hover {
+        transform: scale(1.2);
+        box-shadow: inset 0 0 0 2px white;
+    }
+}
+
+@media all and (max-width: 730px) {
+    .action h1 {
+        font-size: 6em;
+        /*180px*/
+    }
+
+    .action p {
+        font-size: 1em;
+        /*36px*/
+    }
+
+    .action a {
+        font-size: 20px;
+        width: 160px;
+        padding: 13px 30px;
+    }
+}
+
+/*================================================================ Fin Banner ================================================================*/
+/***********************************************************************************************************************************************/
+/*================================================================= Sobre Mi =================================================================*/
+#about-me {
+    min-height: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imagen {
+    width: 100%;
+    text-align: center;
+}
+
+.imagen img {
+    width: 460px;
+    /*460px*/
+}
+
+#about-me .texto {
+    width: 100%;
+    max-width: 620px;
+    padding: 4px;
+}
+
+#about-me .texto p {
+    margin-bottom: 20px;
+}
+
+@media all and (max-width: 924px) {
+    #about-me {
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
+    .imagen {
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .imagen img {
+        width: 340px;
+    }
+
+    #about-me .texto {
+        text-align: center;
+        padding: 0px 14px;
+    }
+
+    #about-me .texto p {
+        font-size: 14px;
+    }
+
+    #about-me .texto p:first-child {
+        margin-top: 40px;
+    }
+
+    #about-me .texto p:last-child {
+        margin-bottom: 40px;
+    }
+}
+
+/*=============================================================== Fin Sobre mi ===============================================================*/
+/***********************************************************************************************************************************************/
+/*============================================================== Inicio Conocimientos ==============================================================*/
+#conocimientos {
+    width: 100%;
+    min-height: 500px;
+    background-color: #13142A;
+    color: #AAA6CA;
+    display: flex;
+}
+
+#conocimientos .contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.data {
+    width: 100%;
+    max-width: 620px;
+}
+
+.data h2 {
+    margin-bottom: 30px;
+}
+
+.data p {
+    margin-bottom: 20px;
+}
+
+.imagenes {
+    width: 600px;
+    margin-left: 50px;
+    display: flex;
+}
+
+.imagenes img {
+    width: 180px;
+    display: block;
+    margin: auto;
+}
+
+.imagenes img:nth-child(2) {
+    width: 220px;
+}
+
+@media all and (max-width: 1024px) {
+    #conocimientos .contenedor {
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column wrap;
+        padding: 40px 0;
+    }
+
+    .data {
+        text-align: center;
+    }
+
+    .imagenes {
+        width: 300px;
+        margin-left: 25px;
+        margin-top: 25px;
+    }
+
+
+    .data {
+        padding: 0px 14px;
+    }
+
+    .data h2 {
+        font-size: 20px;
+    }
+
+    .data p {
+        font-size: 14px;
+    }
+
+
+    .imagenes img {
+        width: 90px;
+    }
+
+    .imagenes img:nth-child(2) {
+        width: 110px;
+    }
+}
+
+/*============================================================== Fin Conocimientos ==============================================================*/
+/***********************************************************************************************************************************************/
+/*=============================================================== Inicio Proyecto ==============================================================*/
+#proyects {
+    background-color: #1A1A33;
+    text-align: center;
+    min-height: 584px;
+    color: #AAA6CA;
+}
+
+.proyects-txt {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.proyects-txt h2 {
+    margin-bottom: 20px;
+}
+
+.proyects-txt p {
+    width: 100%;
+    max-width: 570px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.proyectos {
+    display: flex;
+    justify-content: center;
+}
+
+.proyectos img {
+    width: 47%;
+    min-width: 350px;
+    /*580px*/
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media all and (max-width: 1024px) {
+    .proyectos {
+        flex-flow: column wrap;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+    .proyects-txt {
+        padding: 0 14px;
+        padding-top: 15px;
+    }
+    
+    .proyects-txt h2 {
+        font-size: 20px;
+    }
+    
+    .proyects-txt p {
+        font-size: 14px;
+    }
+
+    .proyectos img:nth-child(2) {
+        padding-top: 20px;
+    }
+}
+
+/*=============================================================== Fin Proyecto ================================================================*/
+/***********************************************************************************************************************************************/
+/*============================================================== Inicio Contacto ==============================================================*/
+#contacto {
+    background-color: #32314D;
+    min-height: 696px;
+    color: #AAA6CA;
+    text-align: center;
+}
+
+#contacto .contenedor {
+    padding: 0;
+}
+
+#contacto h2 {
+    padding: 38px 0;
+    padding-right: 22px;
+}
+
+#forma-contacto {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 12px;
+}
+
+#forma-contacto .imagen {
+    width: 100%;
+    max-width: 450px;
+}
+
+#forma-contacto form {
+    background-color: #AAA6CA;
+    width: 100%;
+    max-width: 660px;
+    min-height: 514px;
+    color: #21213B;
+    border-radius: 25px;
+}
+
+#forma-contacto form>div {
+    padding: 25px 48px;
+    padding-top: 41px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#forma-contacto form>div h3 {
+    font-size: 36px;
+    font-weight: 400;
+    display: flex;
+    align-self: flex-start;
+    padding-bottom: 20px;
+}
+
+#forma-contacto form>div p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 255px;
+    margin-bottom: 10px;
+}
+
+#forma-contacto form>div p label {
+    display: flex;
+    align-self: start;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#forma-contacto form>div p input {
+    height: 28px;
+    font-size: 16px;
+    background-color: #AAA6CA;
+    border: 0;
+    border-bottom: 1px solid #21213B;
+}
+
+#forma-contacto form>div p textarea {
+    width: 100%;
+    max-width: 550px;
+    /*550px*/
+    height: 60px;
+    font-size: 16px;
+    background-color: #AAA6CA;
+    border: 0;
+    border-bottom: 1px solid #21213B;
+}
+
+.boton {
+    display: flex;
+    color: white;
+    margin-top: -20px;
+    justify-content: flex-end;
+    margin-right: 12px;
+}
+
+.boton input[type='submit'] {
+    background-color: #21213B;
+    color: white;
+    width: 166px;
+    height: 42px;
+    font-size: 18px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.boton input[type='submit']:hover {
+    background-color: #AAA6CA;
+    box-shadow: inset 0 0 0 2px #0C0C22;
+    color: #0C0C22;
+}
+
+#forma-contacto form>div p:nth-child(even) {
+    margin-right: 40px;
+}
+
+@media all and (max-width: 1140px) {
+    #forma-contacto {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    #forma-contacto form {
+        display: block;
+        margin: auto;
+        order: 1;
+    }
+
+    #forma-contacto form>div{
+        width: 100%;
+    }
+
+    #forma-contacto form>div p {
+        max-width: 92%;
+        margin-bottom: 12px;
+        padding-right: 0;
+    }
+    
+    #forma-contacto form>div p label{
+        font-size: 18px;
+    }
+    
+    #forma-contacto form>div p input,
+    #forma-contacto form>div p textarea {
+        width: 100%;
+        height: 26px;
+        font-size: 14px;
+    }
+
+    #forma-contacto .imagen {
+        margin: 40px 0;
+        order: 2;
+    }
+
+    #forma-contacto form>div p:nth-child(even) {
+        margin-right: 0px;
+    }
+}
+
+@media all and (max-width: 690px) {
+    #forma-contacto form>div h3 {
+        font-size: 26px;
+    }
+    
+    #forma-contacto form>div p label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .boton {
+        justify-content: center;
+    }
+}
+
+/*=============================================================== Fin Contacto ================================================================*/
+/***********************************************************************************************************************************************/
+/*=============================================================== Inicio Footer ===============================================================*/
+footer {
+    background-color: #0C0C22;
+    color: #AAA6CA;
+    text-align: center;
+    min-height: 120px;
+}
+
+.redes-sociales {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.redes-sociales a img {
+    width: 30px;
+    margin: auto 20px;
+}
+
+@media all and (max-width: 735px) {}
+
+@media all and (min-width: 735px) {
+    .redes-sociales a img:hover {
+        animation-name: salto;
+        animation-duration: 1s;
+    }
+}
+
+/*=============================================================== Fin Footer ===============================================================*/
